@@ -1,0 +1,266 @@
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #e0f2f1; /* Very light teal background */
+    color: #333;
+}
+
+/* --- LAYOUT CONTAINER (Holds Sidebar + Content) --- */
+.layout-container {
+    display: flex;
+    min-height: 100vh; /* Full screen height */
+}
+
+/* --- LEFT SIDEBAR (The Green Box) --- */
+.sidebar {
+    width: 250px; /* Fixed width */
+    background-color: #00897b; /* Teal Color */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers links vertically */
+    padding: 2rem;
+    position: fixed; /* Keeps it stuck to the left */
+    height: 100vh;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+    border: 2px solid rgba(255,255,255,0.2);
+    padding: 10px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+.sidebar nav ul li {
+    margin: 1.5rem 0;
+}
+
+.sidebar nav ul li a {
+    color: rgba(255, 255, 255, 0.7); /* Slightly transparent white */
+    text-decoration: none;
+    font-size: 1.1rem;
+    text-transform: lowercase; 
+    transition: 0.3s;
+}
+
+.sidebar nav ul li a:hover, 
+.sidebar nav ul li a.active {
+    color: white; /* Bright white on hover */
+    font-weight: bold;
+    transform: scale(1.1);
+    display: inline-block;
+}
+
+/* --- MAIN CONTENT (The White Area) --- */
+.main-content {
+    margin-left: 250px; /* Moves content right to not hide behind sidebar */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem;
+    width: calc(100% - 250px);
+}
+
+/* --- HERO CARD (The Center Profile) --- */
+.hero-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 700px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Soft shadow */
+    margin-bottom: 3rem;
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 5px solid #b2dfdb; /* Light teal border around face */
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #00695c; /* Darker teal text */
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #00897b; /* Teal text */
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+}
+
+.bio {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* --- BUTTONS & LINKS --- */
+.social-links a {
+    color: #00897b;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background-color: #00897b;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px; /* Pill shape */
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #00695c;
+    transform: translateY(-2px);
+}
+
+/* --- SKILLS SECTION --- */
+#skills h2 {
+    color: #00695c;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.skill-tag {
+    background: white;
+    color: #00695c;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border: 1px solid #b2dfdb;
+}
+
+/* --- PROJECT CARDS (For Internship/Projects pages) --- */
+.project-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+/* --- GALLERY GRID (For Screenshots) --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #eee;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 150px; 
+    object-fit: cover; 
+    cursor: pointer; 
+    display: block;
+    transition: opacity 0.3s;
+}
+
+.gallery-item img:hover {
+    opacity: 0.9;
+}
+
+.gallery-item .caption {
+    font-size: 0.8rem;
+    padding: 8px;
+    text-align: center;
+    color: #555;
+    background: #fcfcfc;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .layout-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1rem;
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        margin: 0;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .sidebar nav ul {
+        display: flex;
+        gap: 15px;
+    }
+
+    .sidebar nav ul li {
+        margin: 0;
+    }
+
+    .sidebar nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 2rem 1rem;
+        width: 100%;
+    }
+    
+    .hero-card {
+        padding: 2rem 1rem;
+    }
+}

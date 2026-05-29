@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Juan Sumulong</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="layout-container">
+        
+        <aside class="sidebar">
+            <div class="logo">JS</div> 
+            <nav>
+                <ul>
+                    <li><a href="index.html">Resume</a></li>
+                    <li><a href="internship.html">Internship</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="reflections.html">Reflections</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            
+            <h1 style="margin-bottom: 2rem; color: #00695c;">Academic Projects</h1>
+
+            <div style="width: 100%; max-width: 900px;">
+                
+                <div class="project-card">
+                    <h3>MetroMetrics (Thesis Project)</h3>
+                    <p style="margin-bottom: 15px; margin-top: 10px; color: #555;">
+                        A thesis project that uses predictive models to forecast crowd congestion at Metro Manila train stations. 
+                        I built interactive dashboards in Google Looker to visualize insights and used Celery Beat for task automation.
+                    </p>
+
+                    <div class="gallery-grid">
+                        
+                        <div class="gallery-item">
+                            <img src="images/MetroMetrics_Main.png" alt="Landing Page" onclick="window.open(this.src)">
+                            <p class="caption">Landing Page: Crowd Forecasting</p>
+                        </div>
+
+                        <div class="gallery-item">
+                            <img src="images/MetroMetrics_Analytics.png" alt="Analytics Dashboard" onclick="window.open(this.src)">
+                            <p class="caption">Analytics: Passenger Volume Trends</p>
+                        </div>
+
+                        <div class="gallery-item">
+                            <img src="images/MetroMetrics_Dashboard.png" alt="Weekly Predictions" onclick="window.open(this.src)">
+                            <p class="caption">Dashboard: 7-Day Prediction View</p>
+                        </div>
+
+                        <div class="gallery-item">
+                            <img src="images/MetroMetrics_Mobile.png" alt="Mobile Layout" onclick="window.open(this.src)">
+                            <p class="caption">Mobile Responsivenes: Schedules & Alerts</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>EduScore</h3>
+                    <p style="margin-top: 10px; color: #555;">
+                        An academic project where I led a team to build an online faculty evaluation form for students. 
+                        I also served as the Quality Assurance tester to ensure the prototype was bug-free before deployment.
+                    </p>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
